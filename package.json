@@ -1,0 +1,17 @@
+{
+  "name": "odysseus",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Zero-cost local automation cockpit",
+  "scripts": {
+    "dev": "concurrently -n server,client -c green,cyan \"npm:dev:server\" \"npm:dev:client\"",
+    "dev:server": "cd server && node --watch server.js",
+    "dev:client": "cd client && npx vite --port 5173",
+    "build": "cd client && npx vite build",
+    "start": "cd server && node server.js",
+    "test": "node --test \"server/lib/__tests__/*.test.js\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.0"
+  }
+}
